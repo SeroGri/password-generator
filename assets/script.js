@@ -1,50 +1,56 @@
 // Assignment code here
 var generatePassword = function() {
-  const lengthEl = window.prompt("Please enter a value for password length from 8 to 128.");
-    if (lengthEl === "" || lengthEl === null || lengthEl <= 7 || lengthEl >= 129 ) {
-      window.alert("You need to provide a valid answer! Please try again.");
+  var lengthEl = window.prompt("Please enter a value for password length from 8 to 128.");
+    if ( (!(lengthEl >= 8)) || (!(lengthEl <= 128)) ) {
+      window.alert("Invalid response:" + " " + lengthEl);
       // use return to call it again and stop the rest of this function from running
       return generatePassword();
+      
     }
 
-  const upperEl = window.prompt("Would you like your password to include uppercase letters? Type 'YES' or 'NO'."); 
-  if (upperEl != 'YES' || upperEl != 'NO') {
-    window.alert("You need to provide a valid answer! Please try again.");
-    
+// Ask to include uppercase letters
+  var upperEl = window.prompt("Would you like your password to include uppercase letters? Type 'YES' or 'NO'."); 
+  if (upperEl != 'YES' && upperEl != 'NO') {
+    window.alert("Invalid response:" + " " + upperEl);
+
     return generatePassword();
+    
+ 
   }
 
-  
-  // convert to all lowercase so we can check with less options
-  upperEl = upperEl.toLowerCase();
-
- 
-  const lowerEl = window.prompt("Would you like your password to include lowercase letters? Type 'YES' or 'NO'.");
-  if (lowerEl != 'YES' || lowerEl != 'NO') {
-    window.alert("You need to provide a valid answer! Please try again.");
+ // Ask to include lowercase letters
+  var lowerEl = window.prompt("Would you like your password to include lowercase letters? Type 'YES' or 'NO'.");
+  if (lowerEl != 'YES' && lowerEl != 'NO') {
+    window.alert("Invalid response:" + " " + lowerEl);
     
     return generatePassword();
+    
+    
   }
 
   lowerEl = lowerEl.toLowerCase();
 
-  const numericEl = window.prompt("Would you like your password to include numbers? Type 'YES' or 'NO'.");
-  if (numericEl != 'YES' || numericEl != 'NO') {
-    window.alert("You need to provide a valid answer! Please try again.");
+  // Ask to include numericals
+  var numericEl = window.prompt("Would you like your password to include numbers? Type 'YES' or 'NO'.");
+  if (numericEl != 'YES' && numericEl != 'NO') {
+    window.alert("Invalid response:" + " " + numericEl);
+    
     return generatePassword();
+    
   }
 
-  numericEl = numericEl.toLowerCase();
 
-  const specialEl = window.prompt("Would you like your password to include special characters? Type 'YES' or 'NO'.");
-  if (specialEl != 'YES' || specialEl != 'NO') {
-    window.alert("You need to provide a valid answer! Please try again.");
+// Ask to include special characters
+  var specialEl = window.prompt("Would you like your password to include special characters? Type 'YES' or 'NO'.");
+  if (specialEl != 'YES' && specialEl != 'NO') {
+    window.alert("Invalid response:" + " " + specialEl);
+    
     return generatePassword();
+    
   }
-
-  specialEl = specialEl.toLowerCase();
-
+  
 };
+
 
 
 
